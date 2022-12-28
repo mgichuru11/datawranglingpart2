@@ -1,0 +1,29 @@
+---
+title: "Week8 Assignment"
+author: "Michelle Gichuru"
+date: "2022-12-28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+```{r packages}
+library(tidyverse)
+library(readxl)
+```
+
+
+```{r import data}
+relig<-read_excel("relig-income.xlsx")
+```
+
+
+```{r tidy data}
+relig <-relig%>%
+  pivot_longer(!religion,names_to = "income",values_to = "total")
+```
+
